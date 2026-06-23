@@ -1,0 +1,239 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    background: #0b1215;
+    color: #d1e7e9;
+    padding: 20px;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+    position: relative;
+
+    background: rgba(225,225,225,0.05);
+    backdrop-filter: blur(12px);
+
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* Logo */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00f5d4;
+}
+
+/* ================= NAV LINKS ================= */
+nav a {
+    color: #a7f3d0;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00f5d4;
+    left: 0;
+    bottom: -5px;
+     transition: 0.3s;}
+
+nav a:hover{
+    color:white;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+/* ================= HEADINGS ================= */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5eead4;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #67e8f9;
+}
+
+h3 {
+    color: #ccfbf1;
+}
+
+h4 {
+    color: #99f6e4;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================= TASK CARD ================= */
+.task-card{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    margin: 15px auto;
+    width: 320px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 0 12px rgba(0, 255, 200, 0.1);
+  
+}
+
+
+
+
+
+
+/* ================= BUTTON LINKS ================= */
+a:not(nav a) {
+    display: inline-block;
+    margin: 6px;
+    padding: 7px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+    font-weight: 500;
+    
+}
+
+/* ✏️ UPDATE */
+a:not(nav a)[href*="update"] {
+   background: #22d3ee;
+    color: #002b2f;
+}
+
+a:not(nav a)[href*="update"]:hover {
+    background: #06b6d4;
+    transform: scale(1.05);
+}
+
+/* ✅ COMPLETE */
+a:not(nav a)[href*="completed"] {
+    background: #22d3ee;
+    color: #002b2f;
+}
+
+a:not(nav a)[href*="completed"]:hover {
+    background: #06b6d4;
+    transform: scale(1.05);
+}
+
+/* 🗑 DELETE (home + trash) */
+a:not(nav a)[href*="delete"] {
+    background: #0ea5a5;
+    color: #ffffff;
+}
+
+a:not(nav a)[href*="delete"]:hover {
+    background: #0d9488;
+    transform: scale(1.05);
+}
+
+/* ♻️ RESTORE (completed page) */
+a:not(nav a)[href*="restore"] {
+    background: #22d3ee;
+    color: #002b2f;
+}
+
+a:not(nav a)[href*="restore"]:hover {
+    background: #06b6d4;
+    transform: scale(1.05);
+}
+
+/* ================= FORM ================= */
+form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: #0b1215;
+    color: #d1e7e9;
+}
+
+form input::placeholder {
+    color: #7dd3fc;
+}
+
+form button {
+    background: #00f5d4;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    color: #002b2f;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #14b8a6;
+}
+
+/* ================= EMPTY TEXT ================= */
+h3:empty::before {
+    content: "No tasks available";
+    color: #6b7280;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 500px) {
+    .task-card {
+        width: 90%;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin-top: 10px;
+    }
+}
+
+

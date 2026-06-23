@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block abc %}
+
+<center><br>
+
+<h2>To-Do List</h2>
+<br>
+
+    <h2>
+        <a href="{% url 'hcompletedall' %}">COMPLETE ALL</a>
+        <a href="{% url 'deleteall' %}">DELETE ALL</a>
+    </h2>
+
+<br>
+
+{% for i in data %}
+<div class="task-card">
+
+    <h3>{{ i.title }}</h3>
+    <h4>{{ i.des }}</h4><br>
+
+    <a href="{% url 'update' i.id %}">UPDATE</a>
+    <a href="{% url 'hcompleted' i.id %}">COMPLETE</a>
+    <a href="{% url 'hdelete' i.id %}">DELETE</a>
+
+</div>
+
+{% empty %}
+<h3>No tasks available</h3>
+{% endfor %}
+
+</center>
+
+{% endblock %}

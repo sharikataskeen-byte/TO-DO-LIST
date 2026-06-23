@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block abc %}
+<center><br>
+<h2>Trash</h2>
+
+<a href="{%url 'tdeleteall' %} " class="active">DELETE ALL</a>
+<a href="{%url 'trestoreall' %} " class="active">RESTORE ALL</a><br>
+
+
+{% for i in data%}
+<div class='task-card'>
+<h3>{{i.title}}</h3>
+<h4>{{i.des}}</4><br><br>
+<a href="{% url 'delete' i.id %}" class="active">DELETE</a>
+<a href="{% url 'trestore' i.id %}" class="active">RESTORE</a><br></h4></div>
+{%endfor%}
+</center>
+{% endblock %}

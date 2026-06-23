@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block abc %}
+<center><br>
+   <h2>Update List</h2><br>
+   <form action="" method="POST">
+    {%csrf_token%}
+    <label for="" >Title:</label>
+    <input type="text" name="title" value="{{data.title}}"><br><br>
+      
+    <label for="" >Desc:</label>
+    <input type="text" name="des" value="{{data.desc}}"><br><br>
+
+    <button type="submit">Submit</button>
+
+
+   </form>
+
+</center>
+{% endblock %}

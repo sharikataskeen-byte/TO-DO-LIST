@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block abc %}
+<center><br>
+<h2> Completed To-Do list</h2><br>
+<a href="{%url 'crestoreall' %}" class="active">RESTORE ALL</a>
+<a href="{% url 'cdeleteall' %}">DELETE ALL</a><br><br>
+
+
+
+{% for i in data%}
+<div class='task-card'>
+<h3>{{i.title}}</h3>
+<h4>{{i.des}}</h4><br>
+<a href="{% url 'crestore' i.id %}" class="active">RESTORE</a>
+<a href="{% url 'cdelete' i.id %}" class="active">DELETE</a><br></div>
+{%endfor%}
+</center>
+{% endblock %}
